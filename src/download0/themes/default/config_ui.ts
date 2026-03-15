@@ -233,7 +233,7 @@ if (typeof lang === 'undefined') {
       valueTexts.push(checkmark)
       jsmaf.root.children.push(checkmark)
     } else {
-      let valueLabel: Image | jsmaf.Text
+      let valueLabel: Image | jsmaf.Text = new jsmaf.Text()
       if (configOption.key === 'jb_behavior') {
         if (useImageText) {
           valueLabel = new Image({
