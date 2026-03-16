@@ -11,7 +11,7 @@ if (typeof lang === 'undefined') {
 }
 
 (function () {
-  log(lang.loadingConfig)
+  log('Loading config UI...')
 
   const fs = {
     write: function (filename: string, content: string, callback: (error: Error | null) => void) {
@@ -594,5 +594,5 @@ if (typeof lang === 'undefined') {
   updateHighlight()
   loadConfig()
 
-  log(lang.configLoaded)
+  log('Config UI loaded.')
 })()
