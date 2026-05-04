@@ -13,6 +13,7 @@ pip install Pillow
 
 import os
 import sys
+from typing import Callable
 from PIL import Image, ImageDraw, ImageFont
 
 ASSETS = os.path.join(os.path.dirname(os.path.abspath(__file__)), "../src/download0/img")
@@ -118,7 +119,7 @@ def fail_screen() -> Image.Image:
 
 # ── entry point ──────────────────────────────────────────────────────────────
 
-SCREENS: list[tuple[str, callable]] = [
+SCREENS: list[tuple[str, Callable[[], Image.Image]]] = [
     ("main_menu.png", main_menu),
     ("success.png", success_screen),
     ("fail.png", fail_screen),
