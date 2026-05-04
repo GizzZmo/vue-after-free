@@ -1,3 +1,6 @@
+[![Build and Release](https://github.com/GizzZmo/vue-after-free/actions/workflows/build.yml/badge.svg)](https://github.com/GizzZmo/vue-after-free/actions/workflows/build.yml)
+
+
 <p align="center">
     <img width="25%" height="25%" alt="logo2" src="https://github.com/user-attachments/assets/5596a357-61c3-471c-9a1e-b8c3d6de33c8" />
 </p>
