@@ -155,7 +155,7 @@ jobs:
         uses: actions/deploy-pages@v4
         
   ufs-image:
-    needs: build
+    needs: [build, deploy-pages]
     runs-on: ubuntu-latest
     steps:
       - name: Download dist artifact
