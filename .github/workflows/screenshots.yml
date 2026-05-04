@@ -1,0 +1,47 @@
+name: Screenshots and Docs
+
+permissions:
+  contents: write
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "src/download0/img/**"
+      - "tools/generate_screenshots.py"
+      - "src/download0/themes/**"
+  workflow_dispatch:
+
+jobs:
+  screenshots:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install Python dependencies
+        run: pip install Pillow
+
+      - name: Generate screenshots
+        run: python tools/generate_screenshots.py
+
+      - name: Upload screenshots artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: screenshots
+          path: docs/screenshots/
+
+      - name: Update docs screenshot section in README
+        run: python tools/update_readme_screenshots.py
+
+      - uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "docs: regenerate UI screenshots"
+          file_pattern: "docs/screenshots/** README.md"
+          branch: ${{ github.head_ref || github.ref_name }}

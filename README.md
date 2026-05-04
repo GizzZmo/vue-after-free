@@ -253,6 +253,21 @@ The update.js payload allows you to grab the latest files in the repo without ne
 # Themes 
 Themes can be added my simply copying the folder to `/download0/themes/` the default theme provides a good example of how a theme should be written.
 
+<!-- SCREENSHOTS_START -->
+
+## Screenshots
+
+### Main Menu
+![Main Menu](https://raw.githubusercontent.com/GizzZmo/vue-after-free/main/docs/screenshots/main_menu.png)
+
+### Success Screen
+![Success Screen](https://raw.githubusercontent.com/GizzZmo/vue-after-free/main/docs/screenshots/success.png)
+
+### Failure Screen
+![Failure Screen](https://raw.githubusercontent.com/GizzZmo/vue-after-free/main/docs/screenshots/fail.png)
+
+<!-- SCREENSHOTS_END -->
+
 # Credits
 
 - [c0w-ar](https://github.com/c0w-ar/) — Lapse and NetCtrl porting  , Reverse Engineering
