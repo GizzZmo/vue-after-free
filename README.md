@@ -224,6 +224,51 @@ Vue After Free comes preloaded with some payloads.
 > [!IMPORTANT]
 > The np-fake-signin should not be run on a real psn account.
 
+## Recommended Payloads
+
+> [!NOTE]
+> For educational purposes — an overview of common kernel-exploit payloads used with Vue-After-Free on firmwares 7.00–13.00.
+
+### GoldHEN *(Strongly Recommended)*
+
+**GoldHEN** is the most widely used payload with Vue-After-Free and the recommended choice for most users.
+
+Key features:
+- Most stable and feature-rich HEN available
+- Excellent plugin support (cheats, patches, PKG installers, etc.)
+- Rest-mode persistence on most firmwares
+- Built-in FTP server, homebrew support, and fPKG game loading
+- Regularly maintained and updated
+
+Download: Available from [Cyro's Ko-fi page](https://ko-fi.com/al_azif) and [Al-Azif's GitHub](https://github.com/Al-Azif/ps4-exploit-host).
+
+### HEN *(Basic / Lightweight)*
+
+**HEN** (Homebrew ENabler) is a simpler, lighter alternative to GoldHEN.
+
+- Minimal footprint without the extra plugin infrastructure
+- Can be more reliable on higher firmwares (e.g. 12.50–13.00) if GoldHEN is unstable
+- Good fallback if GoldHEN causes kernel panics on your specific console
+
+### Payload Overview
+
+| Payload | Use Case | Stability | Notes |
+| :------ | :------- | :-------- | :---- |
+| GoldHEN | Daily driver — games + homebrew | Best overall | Default recommendation |
+| HEN | Minimal setup | Very good | Good fallback |
+| Linux payloads | Running Linux on PS4 | Good | Available for most firmwares |
+| FTP / File Manager | Quick file transfer | Excellent | Often loaded after main HEN |
+| App2USB / Game Dumper | Back up installed games to USB | Varies | Can cause crashes on some setups |
+| JS Payloads | Temporary userland tools | Okay | Vue must be closed and reopened between runs |
+
+### How to Use a Payload with Vue-After-Free
+
+1. Rename your chosen payload file to `payload.bin`.
+2. Place it in the root of a USB drive for first boot, **or** copy it to `/data/` on the PS4 internal drive after the first successful jailbreak — Vue will load it from there automatically in future boots (no USB required).
+3. Vue-After-Free loads `payload.bin` automatically when the kernel exploit succeeds, or you can select and run payloads manually from the in-app Payload Menu.
+
+> **Recommendation for a non-jailbroken console (not updated in a while):** start with GoldHEN. If you experience kernel panics or instability, switch to regular HEN.
+
 ## FTP
 The `ftp-server.ts` payload gives you sandbox FTP to quickly swap exploit or cosmetic files without running a kernel exploit/jailbreaking.
 
