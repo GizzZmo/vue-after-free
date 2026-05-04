@@ -1,0 +1,3 @@
+steps:
+  - name: Fetch main for diff
+    run: git fetch origin main:refs/remotes/origin/main --depth=1
