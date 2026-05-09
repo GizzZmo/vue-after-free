@@ -286,6 +286,9 @@ Place your `.bin`, `.elf`, or `.js` files in a `payloads/` folder on a USB drive
 ## FTP
 The `ftp-server.js` payload starts a full FTP server giving access to the entire filesystem after jailbreak. You can use it with any FTP client (e.g. FileZilla) to transfer files to and from the console.
 
+> [!WARNING]
+> The FTP server grants unauthenticated access to the entire PS4 filesystem. Only run it on a trusted local network and close the payload (restart Vue) when you no longer need it.
+
 The sandbox FTP variant gives limited access to the Vue sandbox, useful for swapping exploit or cosmetic files without running the kernel exploit.
 
 ## Web UI
