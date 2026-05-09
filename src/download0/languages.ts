@@ -269,6 +269,25 @@ switch (detectedLocale) {
     lang.oToGoBack = '按 O 返回'
     break
 
+  case 'ru':
+    // Russian
+    lang.jailbreak = 'Взлом'
+    lang.payloadMenu = 'Меню пейлоадов'
+    lang.config = 'Настройки'
+    lang.exit = 'Выход'
+    lang.autoLapse = 'Авто Lapse'
+    lang.autoPoop = 'Авто Poop'
+    lang.autoClose = 'Авто закрытие'
+    lang.music = 'Музыка'
+    lang.jbBehavior = 'Режим взлома'
+    lang.jbBehaviorAuto = 'Авто определение'
+    lang.jbBehaviorNetctrl = 'NetControl'
+    lang.jbBehaviorLapse = 'Lapse'
+    lang.theme = 'Тема'
+    lang.xToGoBack = 'X для возврата'
+    lang.oToGoBack = 'O для возврата'
+    break
+
   case 'en':
   default:
     // English (default) which is already set

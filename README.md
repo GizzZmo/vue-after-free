@@ -272,11 +272,27 @@ Download: Available from [Cyro's Ko-fi page](https://ko-fi.com/al_azif) and [Al-
 
 > **Recommendation for a non-jailbroken console (not updated in a while):** start with GoldHEN. If you experience kernel panics or instability, switch to regular HEN.
 
-## FTP
-The `ftp-server.ts` payload gives you sandbox FTP to quickly swap exploit or cosmetic files without running a kernel exploit/jailbreaking.
+## Payload Menu
 
-## WebUI
-Example code for how you can run userland code with the browser as the UI. (possible alternative to jsmaf)
+The Payload Menu lets you launch `.bin`, `.elf`, and `.js` payloads from the UI without reopening the app (except for JS payloads, which require closing and reopening Vue between runs).
+
+When already jailbroken, the Payload Menu scans for payloads in:
+- `/download0/payloads/` — built-in payloads bundled with Vue
+- `/data/payloads/` — payloads stored on internal storage
+- `/mnt/usb0/payloads/` through `/mnt/usb7/payloads/` — payloads on USB drives
+
+Place your `.bin`, `.elf`, or `.js` files in a `payloads/` folder on a USB drive and they will appear automatically in the Payload Menu after jailbreaking.
+
+## FTP
+The `ftp-server.js` payload starts a full FTP server giving access to the entire filesystem after jailbreak. You can use it with any FTP client (e.g. FileZilla) to transfer files to and from the console.
+
+The sandbox FTP variant gives limited access to the Vue sandbox, useful for swapping exploit or cosmetic files without running the kernel exploit.
+
+## Web UI
+`web-ui.js` launches a minimal HTTP server and opens the PS4 web browser pointed at it. The page has a log panel and a jailbreak button, useful as an example of driving Vue-After-Free from a web interface instead of the built-in jsmaf UI.
+
+## Video Player
+`explode.js` is a looping video player that serves a local HLS stream from the Vue sandbox and plays it full-screen using the PS4 video API. Press Circle to exit and return to the main menu.
 
 ## ELFLDR
 `elfldr.elf` is used to load elf and bin payloads post exploit when HEN or GoldHEN have not been loaded.
@@ -297,6 +313,29 @@ The np-fake-signin payload gets rid of the first PS Vue pop-up asking you to sig
 
 # Update
 The update.js payload allows you to grab the latest files in the repo without needing to reinstall anything. Only works for normal UI version not for Lite mode.  
+
+# Localization
+
+Vue-After-Free automatically detects the PS4 system language and applies the corresponding UI language. The following languages are supported:
+
+| Language | Code |
+| :------- | :--- |
+| English | en |
+| Spanish | es |
+| Portuguese | pt |
+| French | fr |
+| German | de |
+| Italian | it |
+| Dutch | nl |
+| Polish | pl |
+| Turkish | tr |
+| Russian | ru |
+| Arabic | ar |
+| Japanese | ja |
+| Korean | ko |
+| Chinese | zh |
+
+Arabic, German, Japanese, Korean, and Chinese use pre-rendered image text for menu labels due to font rendering limitations on the PS4.
 
 # Themes 
 Themes can be added my simply copying the folder to `/download0/themes/` the default theme provides a good example of how a theme should be written.

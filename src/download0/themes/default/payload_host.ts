@@ -85,10 +85,9 @@ import { checkJailbroken } from 'download0/check-jailbroken'
 
   if (is_jailbroken) {
     scanPaths.push('/data/payloads')
-    // this need sandbox escape to work
-    // for (let i = 0; i <= 7; i++) {
-    //   scanPaths.push('/mnt/usb' + i + '/payloads')
-    // }
+    for (let i = 0; i <= 7; i++) {
+      scanPaths.push('/mnt/usb' + i + '/payloads')
+    }
   }
 
   log('Scanning paths: ' + scanPaths.join(', '))
