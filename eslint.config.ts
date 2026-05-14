@@ -6,7 +6,7 @@ import neostandard from 'neostandard'
 
 export default defineConfig([
   {
-    ignores: ['**/vid/**/*.ts'], // Ignore MPEG-TS video files
+    ignores: ['**/vid/**/*.ts', 'dist/**'], // Ignore MPEG-TS video files and build output
   },
   {
     files: ['**/*.{js,mjs,cjs,ts,mts,cts}'],
